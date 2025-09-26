@@ -14,6 +14,7 @@ A decentralized music NFT player built on the Tezos blockchain. Discover, play, 
 - 📱 **Mobile Responsive** - Optimized for all screen sizes with mobile-specific navigation
 - 🧪 **Demo Mode** - Try the app without connecting a wallet
 - ⚡ **Fast Performance** - Built with Next.js 15 and optimized for speed
+- 🌍 **Internationalization** - Multi-language support (English, French) with easy language switching
 - 🗃️ **Database Integration** - Enhanced metadata through TezRadio's curated database
 
 ## 🚀 Getting Started
@@ -86,6 +87,7 @@ pnpm dev
 - **Database**: Supabase (for TezRadio integration)
 - **Blockchain**: Tezos, Taquito, Beacon SDK
 - **State Management**: React Context API
+- **Internationalization**: next-intl (English, French)
 - **Icons**: Lucide React
 - **Deployment**: Vercel
 
@@ -136,6 +138,24 @@ pnpm dev
 - Handles connection errors gracefully
 - Session persistence across browser refreshes
 - Automatic state cleanup on wallet disconnect
+
+## 🌍 Internationalization
+
+TezosBeats supports multiple languages with seamless switching:
+
+- **English (en)** - Default language
+- **French (fr)** - Complete translation
+- **Language Switcher** - Easy switching via UI component
+- **Locale-based Routing** - URLs like `/en`, `/fr`
+- **Comprehensive Coverage** - Homepage, navigation, player controls, wallet integration
+
+### Adding New Languages
+
+See [LOCALIZATION.md](./LOCALIZATION.md) for detailed instructions on:
+- Adding new language translations
+- Translation key structure
+- Testing localized content
+- Contributing translations
 
 ## 🤝 Contributing
 

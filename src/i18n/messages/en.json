@@ -1,0 +1,144 @@
+{
+  "app": {
+    "title": "TezosBeats",
+    "tagline": "NFT Music Player",
+    "beta": "Beta",
+    "subtitle": "Your Tezos music NFTs, beautifully organized"
+  },
+  "navigation": {
+    "home": "Home",
+    "myMusic": "My Music",
+    "playlists": "Playlists",
+    "search": "Search"
+  },
+  "player": {
+    "previousTrack": "Previous track",
+    "nextTrack": "Next track",
+    "play": "Play",
+    "pause": "Pause",
+    "shuffle": "Shuffle",
+    "repeat": "Repeat",
+    "repeatOne": "Repeat one",
+    "volume": "Adjust volume",
+    "seek": "Seek through track",
+    "previousWithShortcut": "Previous track (←)",
+    "nextWithShortcut": "Next track (→)",
+    "volumeWithShortcut": "Adjust volume (↑/↓)"
+  },
+  "wallet": {
+    "connect": "Connect Wallet",
+    "disconnect": "Disconnect",
+    "connecting": "Connecting...",
+    "connected": "Connected",
+    "address": "Address",
+    "balance": "Balance"
+  },
+  "homepage": {
+    "title": "Why Choose TezosBeats?",
+    "subtitle": "Everything you need for your music NFT experience",
+    "features": {
+      "autoDiscovery": {
+        "title": "Auto-Discovery",
+        "description": "Automatically scans your Tezos wallet for music NFTs"
+      },
+      "highQuality": {
+        "title": "High-Quality Playback",
+        "description": "Stream your NFTs with crystal clear audio quality"
+      },
+      "smartPlaylists": {
+        "title": "Smart Playlists",
+        "description": "Create and organize custom playlists from your collection"
+      },
+      "secure": {
+        "title": "Secure & Private",
+        "description": "Your wallet connection is secure and your data stays private"
+      }
+    },
+    "steps": {
+      "connect": {
+        "title": "Connect Wallet",
+        "description": "Link your Tezos wallet securely"
+      },
+      "discover": {
+        "title": "Discover Music",
+        "description": "We automatically find all your music NFTs"
+      },
+      "listen": {
+        "title": "Start Listening",
+        "description": "Enjoy your collection with our built-in player"
+      }
+    },
+    "callToAction": {
+      "ready": "Ready to get started?",
+      "description": "Connect your wallet and discover your music NFT collection today!"
+    }
+  },
+  "playlists": {
+    "createPlaylist": "Create Playlist",
+    "newPlaylist": "New Playlist",
+    "editPlaylist": "Edit Playlist",
+    "deletePlaylist": "Delete Playlist",
+    "duplicatePlaylist": "Duplicate Playlist",
+    "playPlaylist": "Play playlist",
+    "addToPlaylist": "Add to playlist",
+    "confirmDelete": "Are you sure you want to delete this playlist?",
+    "playlistName": "Playlist name",
+    "emptyPlaylist": "This playlist is empty",
+    "noPlaylists": "No playlists created yet"
+  },
+  "emptyStates": {
+    "noMusicNFTs": {
+      "title": "No music NFTs found",
+      "description": "We couldn't find any music NFTs in your wallet. Try refreshing or explore our demo mode to see how TezosBeats works."
+    },
+    "walletNotConnected": {
+      "title": "Connect your wallet",
+      "description": "Connect your Tezos wallet to discover and play your music NFTs. Your audio collection awaits!"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "We encountered an error loading your data. Please try again."
+    },
+    "failedToLoadNFTs": {
+      "title": "Failed to load NFTs",
+      "description": "There was an error loading your NFT collection."
+    }
+  },
+  "actions": {
+    "refresh": "Refresh",
+    "tryAgain": "Try again",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "duplicate": "Duplicate",
+    "create": "Create",
+    "close": "Close"
+  },
+  "loading": {
+    "loadingTracks": "Loading tracks...",
+    "connecting": "Connecting...",
+    "processing": "Processing...",
+    "searchingNFTs": "Searching for music NFTs..."
+  },
+  "search": {
+    "placeholder": "Search tracks, artists, collections...",
+    "noResults": "No results found",
+    "searching": "Searching..."
+  },
+  "theme": {
+    "toggleTheme": "Toggle theme",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "playPause": "Play/Pause",
+    "nextTrack": "Next track",
+    "previousTrack": "Previous track",
+    "volumeUp": "Volume up",
+    "volumeDown": "Volume down",
+    "toggleShuffle": "Toggle shuffle",
+    "toggleRepeat": "Toggle repeat"
+  }
+}

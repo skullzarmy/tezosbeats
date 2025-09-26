@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Music, Wallet, AlertCircle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface EmptyStateProps {
   title: string;
@@ -37,13 +38,15 @@ export function EmptyState({ title, description, icon, action }: EmptyStateProps
 export function NoMusicNFTsState({ onRefresh }: { 
   onRefresh: () => void;
 }) {
+  const t = useTranslations();
+  
   return (
     <EmptyState
-      title="No music NFTs found"
-      description="We couldn't find any music NFTs in your wallet. Try refreshing or explore our demo mode to see how TezosBeats works."
+      title={t('emptyStates.noMusicNFTs.title')}
+      description={t('emptyStates.noMusicNFTs.description')}
       icon={<Music className="w-8 h-8" />}
       action={{
-        label: "Refresh",
+        label: t('actions.refresh'),
         onClick: onRefresh
       }}
     />
@@ -51,13 +54,15 @@ export function NoMusicNFTsState({ onRefresh }: {
 }
 
 export function WalletNotConnectedState({ onConnect }: { onConnect: () => void }) {
+  const t = useTranslations();
+  
   return (
     <EmptyState
-      title="Connect your wallet"
-      description="Connect your Tezos wallet to discover and play your music NFTs. Your audio collection awaits!"
+      title={t('emptyStates.walletNotConnected.title')}
+      description={t('emptyStates.walletNotConnected.description')}
       icon={<Wallet className="w-8 h-8" />}
       action={{
-        label: "Connect Wallet",
+        label: t('wallet.connect'),
         onClick: onConnect
       }}
     />
@@ -65,21 +70,23 @@ export function WalletNotConnectedState({ onConnect }: { onConnect: () => void }
 }
 
 export function ErrorState({ 
-  title = "Something went wrong",
-  description = "We encountered an error loading your data. Please try again.",
+  title,
+  description,
   onRetry 
 }: { 
   title?: string;
   description?: string;
   onRetry: () => void;
 }) {
+  const t = useTranslations();
+  
   return (
     <EmptyState
-      title={title}
-      description={description}
+      title={title || t('emptyStates.error.title')}
+      description={description || t('emptyStates.error.description')}
       icon={<AlertCircle className="w-8 h-8" />}
       action={{
-        label: "Try again",
+        label: t('actions.tryAgain'),
         onClick: onRetry
       }}
     />

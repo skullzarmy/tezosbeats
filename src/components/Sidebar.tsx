@@ -31,6 +31,8 @@ import { useApp, RepeatMode } from '@/contexts/AppContext';
 import { WalletState } from '@/hooks/useWallet';
 import KeyboardShortcutsHelp from './KeyboardShortcutsHelp';
 import PlaylistPanel from './PlaylistPanel';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslations } from 'next-intl';
 
 interface SidebarProps {
   onThemeToggle: () => void;
@@ -51,6 +53,7 @@ export default function Sidebar({
 }: SidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [showPlaylistPanel, setShowPlaylistPanel] = useState(false);
+  const t = useTranslations();
   const { 
     wallet, 
     currentTrack, 
@@ -84,11 +87,11 @@ export default function Sidebar({
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   const navigationItems = [
-    { id: 'home', label: 'Home', icon: Home },
+    { id: 'home', label: t('navigation.home'), icon: Home },
     ...(wallet.state === WalletState.CONNECTED ? [
-      { id: 'nfts', label: 'Meine NFTs', icon: Disc },
-      { id: 'playlists', label: 'Playlists', icon: ListMusic, onClick: () => setShowPlaylistPanel(!showPlaylistPanel) },
-      { id: 'search', label: 'Suchen', icon: Search },
+      { id: 'nfts', label: t('navigation.myMusic'), icon: Disc },
+      { id: 'playlists', label: t('navigation.playlists'), icon: ListMusic, onClick: () => setShowPlaylistPanel(!showPlaylistPanel) },
+      { id: 'search', label: t('navigation.search'), icon: Search },
     ] : [])
   ];
 
@@ -227,7 +230,7 @@ export default function Sidebar({
                 size="icon"
                 onClick={toggleShuffle}
                 className={`w-8 h-8 ${isShuffled ? 'text-primary' : 'text-muted-foreground'} hover:text-primary transition-colors`}
-                title={`Shuffle: ${isShuffled ? 'On' : 'Off'}`}
+                title={t('player.shuffle')}
               >
                 <Shuffle className="w-3 h-3" />
               </Button>
@@ -237,7 +240,7 @@ export default function Sidebar({
                 size="icon"
                 onClick={previousTrack}
                 className="w-8 h-8 text-muted-foreground hover:text-foreground transition-colors"
-                title="Previous track"
+                title={t('player.previousTrack')}
               >
                 <SkipBack className="w-3 h-3" />
               </Button>
@@ -247,7 +250,7 @@ export default function Sidebar({
                 size="icon"
                 onClick={togglePlayPause}
                 className="w-10 h-10 shadow-lg hover:shadow-xl transition-all"
-                title={isPlaying ? 'Pause' : 'Play'}
+                title={isPlaying ? t('player.pause') : t('player.play')}
                 disabled={!currentTrack.audioUrl || isLoading}
               >
                 {isLoading ? (
@@ -264,7 +267,7 @@ export default function Sidebar({
                 size="icon"
                 onClick={nextTrack}
                 className="w-8 h-8 text-muted-foreground hover:text-foreground transition-colors"
-                title="Next track"
+                title={t('player.nextTrack')}
               >
                 <SkipForward className="w-3 h-3" />
               </Button>
@@ -274,7 +277,7 @@ export default function Sidebar({
                 size="icon"
                 onClick={toggleRepeat}
                 className={`w-8 h-8 ${repeatMode !== RepeatMode.NONE ? 'text-primary' : 'text-muted-foreground'} hover:text-primary transition-colors`}
-                title={`Repeat: ${repeatMode === RepeatMode.NONE ? 'Off' : repeatMode === RepeatMode.ALL ? 'All' : 'One'}`}
+                title={t('player.repeat')}
               >
                 {repeatMode === RepeatMode.ONE ? (
                   <Repeat1 className="w-3 h-3" />
@@ -298,12 +301,13 @@ export default function Sidebar({
             size={isCollapsed ? 'icon' : 'default'}
             onClick={onThemeToggle}
             className={`${isCollapsed ? 'w-full justify-center px-2' : 'flex-1 justify-start'} ${isMobile ? 'h-12 text-base' : 'h-10'}`}
-            title="Toggle theme"
+            title={t('theme.toggleTheme')}
           >
             {isDark ? <Sun className={`${isMobile ? 'w-5 h-5' : 'w-4 h-4'}`} /> : <Moon className={`${isMobile ? 'w-5 h-5' : 'w-4 h-4'}`} />}
-            {!isCollapsed && <span className="ml-3">{isDark ? 'Light Mode' : 'Dark Mode'}</span>}
+            {!isCollapsed && <span className="ml-3">{isDark ? t('theme.lightMode') : t('theme.darkMode')}</span>}
           </Button>
           {!isCollapsed && !isMobile && <KeyboardShortcutsHelp />}
+          {!isCollapsed && <LanguageSwitcher />}
         </div>
 
         {/* Wallet connection */}
@@ -311,7 +315,7 @@ export default function Sidebar({
           <div className="space-y-2">
             {!isCollapsed && (
               <div className="px-3 py-2 bg-primary/10 rounded-lg">
-                <div className="text-xs text-muted-foreground">Connected</div>
+                <div className="text-xs text-muted-foreground">{t('wallet.connected')}</div>
                 <div className="text-sm font-medium text-primary truncate">
                   {wallet.formatAddress(wallet.walletInfo?.address || '')}
                 </div>
@@ -327,7 +331,7 @@ export default function Sidebar({
               onClick={wallet.disconnect}
             >
               <Wallet className={`${isMobile ? 'w-5 h-5' : 'w-4 h-4'}`} />
-              {!isCollapsed && <span className="ml-3">Disconnect</span>}
+              {!isCollapsed && <span className="ml-3">{t('wallet.disconnect')}</span>}
             </Button>
           </div>
         ) : (
@@ -347,8 +351,8 @@ export default function Sidebar({
             )}
             {!isCollapsed && (
               <span className="ml-3">
-                {wallet.isConnecting ? 'Connecting...' : 
-                 wallet.state === WalletState.ERROR ? 'Retry' : 'Connect Wallet'}
+                {wallet.isConnecting ? t('wallet.connecting') : 
+                 wallet.state === WalletState.ERROR ? t('actions.tryAgain') : t('wallet.connect')}
               </span>
             )}
           </Button>

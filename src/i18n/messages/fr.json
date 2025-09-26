@@ -1,0 +1,150 @@
+{
+  "app": {
+    "title": "TezosBeats",
+    "tagline": "Lecteur de Musique NFT",
+    "beta": "Bêta",
+    "subtitle": "Vos NFT musicaux Tezos, magnifiquement organisés"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "myMusic": "Ma Musique",
+    "playlists": "Playlists",
+    "search": "Rechercher",
+    "browseYourMusic": "Parcourir Votre Musique",
+    "viewPlaylists": "Voir les Playlists"
+  },
+  "player": {
+    "previousTrack": "Piste précédente",
+    "nextTrack": "Piste suivante",
+    "play": "Lire",
+    "pause": "Pause",
+    "shuffle": "Aléatoire",
+    "repeat": "Répéter",
+    "repeatOne": "Répéter une",
+    "volume": "Ajuster le volume",
+    "seek": "Naviguer dans la piste",
+    "previousWithShortcut": "Piste précédente (←)",
+    "nextWithShortcut": "Piste suivante (→)",
+    "volumeWithShortcut": "Ajuster le volume (↑/↓)"
+  },
+  "wallet": {
+    "connect": "Connecter le Portefeuille",
+    "connectToStart": "Connecter le Portefeuille pour Commencer",
+    "disconnect": "Déconnecter",
+    "connecting": "Connexion...",
+    "connected": "Connecté",
+    "address": "Adresse",
+    "balance": "Solde",
+    "supports": "Compatible avec:"
+  },
+  "homepage": {
+    "title": "Pourquoi choisir TezosBeats ?",
+    "subtitle": "Tout ce dont vous avez besoin pour votre expérience NFT musicale",
+    "features": {
+      "autoDiscovery": {
+        "title": "Découverte Automatique",
+        "description": "Scanne automatiquement votre portefeuille Tezos pour les NFT musicaux"
+      },
+      "highQuality": {
+        "title": "Lecture Haute Qualité",
+        "description": "Diffusez vos NFT avec une qualité audio cristalline"
+      },
+      "smartPlaylists": {
+        "title": "Playlists Intelligentes",
+        "description": "Créez et organisez des playlists personnalisées depuis votre collection"
+      },
+      "secure": {
+        "title": "Sécurisé et Privé",
+        "description": "Votre connexion de portefeuille est sécurisée et vos données restent privées"
+      }
+    },
+    "steps": {
+      "connect": {
+        "title": "Connecter le Portefeuille",
+        "description": "Liez votre portefeuille Tezos en toute sécurité"
+      },
+      "discover": {
+        "title": "Découvrir la Musique",
+        "description": "Nous trouvons automatiquement tous vos NFT musicaux"
+      },
+      "listen": {
+        "title": "Commencer l'Écoute",
+        "description": "Profitez de votre collection avec notre lecteur intégré"
+      }
+    },
+    "callToAction": {
+      "ready": "Prêt quand vous l'êtes",
+      "title": "Transformez Votre Expérience NFT Musicale",
+      "description": "Rejoignez l'avenir de la propriété musicale. Connectez votre portefeuille et découvrez une nouvelle façon de profiter de vos NFT musicaux Tezos.",
+      "getStarted": "Commencer Maintenant"
+    }
+  },
+  "playlists": {
+    "createPlaylist": "Créer une Playlist",
+    "newPlaylist": "Nouvelle Playlist",
+    "editPlaylist": "Modifier la Playlist",
+    "deletePlaylist": "Supprimer la Playlist",
+    "duplicatePlaylist": "Dupliquer la Playlist",
+    "playPlaylist": "Lire la playlist",
+    "addToPlaylist": "Ajouter à la playlist",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer cette playlist ?",
+    "playlistName": "Nom de la playlist",
+    "emptyPlaylist": "Cette playlist est vide",
+    "noPlaylists": "Aucune playlist créée pour le moment"
+  },
+  "emptyStates": {
+    "noMusicNFTs": {
+      "title": "Aucun NFT musical trouvé",
+      "description": "Nous n'avons trouvé aucun NFT musical dans votre portefeuille. Essayez d'actualiser ou explorez notre mode démo pour voir comment TezosBeats fonctionne."
+    },
+    "walletNotConnected": {
+      "title": "Connectez votre portefeuille",
+      "description": "Connectez votre portefeuille Tezos pour découvrir et lire vos NFT musicaux. Votre collection audio vous attend !"
+    },
+    "error": {
+      "title": "Quelque chose s'est mal passé",
+      "description": "Nous avons rencontré une erreur lors du chargement de vos données. Veuillez réessayer."
+    },
+    "failedToLoadNFTs": {
+      "title": "Échec du chargement des NFT",
+      "description": "Il y a eu une erreur lors du chargement de votre collection NFT."
+    }
+  },
+  "actions": {
+    "refresh": "Actualiser",
+    "tryAgain": "Réessayer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "duplicate": "Dupliquer",
+    "create": "Créer",
+    "close": "Fermer"
+  },
+  "loading": {
+    "loadingTracks": "Chargement des pistes...",
+    "connecting": "Connexion...",
+    "processing": "Traitement...",
+    "searchingNFTs": "Recherche de NFT musicaux..."
+  },
+  "search": {
+    "placeholder": "Rechercher des pistes, artistes, collections...",
+    "noResults": "Aucun résultat trouvé",
+    "searching": "Recherche..."
+  },
+  "theme": {
+    "toggleTheme": "Basculer le thème",
+    "lightMode": "Mode clair",
+    "darkMode": "Mode sombre"
+  },
+  "shortcuts": {
+    "title": "Raccourcis clavier",
+    "playPause": "Lecture/Pause",
+    "nextTrack": "Piste suivante",
+    "previousTrack": "Piste précédente",
+    "volumeUp": "Volume +",
+    "volumeDown": "Volume -",
+    "toggleShuffle": "Basculer aléatoire",
+    "toggleRepeat": "Basculer répétition"
+  }
+}

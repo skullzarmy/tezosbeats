@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
 import { WalletState } from '@/hooks/useWallet';
+import { useTranslations } from 'next-intl';
 
 interface HomePageProps {
   onSectionChange?: (section: string) => void;
@@ -24,30 +25,31 @@ interface HomePageProps {
 
 export default function HomePage({ onSectionChange }: HomePageProps) {
   const { wallet } = useApp();
+  const t = useTranslations();
 
   const features = [
     {
       icon: Music,
-      title: 'Auto-Discovery',
-      description: 'Automatically scans your Tezos wallet for music NFTs',
+      title: t('homepage.features.autoDiscovery.title'),
+      description: t('homepage.features.autoDiscovery.description'),
       color: 'bg-primary/10 text-primary'
     },
     {
       icon: Headphones,
-      title: 'High-Quality Playback',
-      description: 'Stream your NFTs with crystal clear audio quality',
+      title: t('homepage.features.highQuality.title'),
+      description: t('homepage.features.highQuality.description'),
       color: 'bg-primary/10 text-primary'
     },
     {
       icon: ListMusic,
-      title: 'Smart Playlists',
-      description: 'Create and organize custom playlists from your collection',
+      title: t('homepage.features.smartPlaylists.title'),
+      description: t('homepage.features.smartPlaylists.description'),
       color: 'bg-primary/10 text-primary'
     },
     {
       icon: Shield,
-      title: 'Secure & Private',
-      description: 'Your wallet connection is secure and your data stays private',
+      title: t('homepage.features.secure.title'),
+      description: t('homepage.features.secure.description'),
       color: 'bg-primary/10 text-primary'
     }
   ];
@@ -73,14 +75,14 @@ export default function HomePage({ onSectionChange }: HomePageProps) {
             </div>
             <div className="text-left">
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent">
-                TezosBeats
+                {t('app.title')}
               </h1>
               <div className="flex items-center gap-2 mt-2">
                 <Badge variant="secondary" className="text-sm">
-                  NFT Music Player
+                  {t('app.tagline')}
                 </Badge>
                 <Badge variant="outline" className="text-xs">
-                  Beta
+                  {t('app.beta')}
                 </Badge>
               </div>
             </div>
@@ -89,7 +91,7 @@ export default function HomePage({ onSectionChange }: HomePageProps) {
         
         <div className="space-y-4">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground max-w-3xl mx-auto">
-            Your Tezos music NFTs, <span className="text-primary">beautifully organized</span>
+            {t('app.subtitle')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Connect your wallet and instantly access your music NFT collection in one simple interface. 
@@ -103,11 +105,11 @@ export default function HomePage({ onSectionChange }: HomePageProps) {
             <>
               <Button size="lg" className="gap-2 px-8 py-6 text-lg" onClick={() => onSectionChange?.('nfts')}>
                 <Play className="w-5 h-5" />
-                Browse Your Music
+                {t('navigation.browseYourMusic')}
               </Button>
               <Button size="lg" variant="outline" className="gap-2 px-8 py-6 text-lg" onClick={() => onSectionChange?.('playlists')}>
                 <ListMusic className="w-5 h-5" />
-                View Playlists
+                {t('navigation.viewPlaylists')}
               </Button>
             </>
           ) : (
@@ -118,7 +120,7 @@ export default function HomePage({ onSectionChange }: HomePageProps) {
               className="gap-2 px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Wallet className="w-5 h-5" />
-              {wallet.isConnecting ? 'Connecting...' : 'Connect Wallet to Start'}
+              {wallet.isConnecting ? t('wallet.connecting') : t('wallet.connectToStart')}
               {!wallet.isConnecting && <ArrowRight className="w-4 h-4" />}
             </Button>
           )}
@@ -126,7 +128,7 @@ export default function HomePage({ onSectionChange }: HomePageProps) {
 
         {/* Supported wallets */}
         <div className="flex flex-wrap justify-center gap-2 mt-6">
-          <span className="text-sm text-muted-foreground">Supports:</span>
+          <span className="text-sm text-muted-foreground">{t('wallet.supports')}</span>
           {supportedWallets.map((walletName, index) => (
             <Badge key={index} variant="outline" className="text-xs">
               {walletName}
@@ -138,8 +140,8 @@ export default function HomePage({ onSectionChange }: HomePageProps) {
       {/* Features Section */}
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold mb-4">Why Choose TezosBeats?</h3>
-          <p className="text-muted-foreground text-lg">Everything you need for your music NFT experience</p>
+          <h3 className="text-3xl font-bold mb-4">{t('homepage.title')}</h3>
+          <p className="text-muted-foreground text-lg">{t('homepage.subtitle')}</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -171,20 +173,20 @@ export default function HomePage({ onSectionChange }: HomePageProps) {
           {[
             {
               step: 1,
-              title: 'Connect Wallet',
-              description: 'Link your Tezos wallet securely with one click',
+              title: t('homepage.steps.connect.title'),
+              description: t('homepage.steps.connect.description'),
               icon: Wallet
             },
             {
               step: 2,
-              title: 'Auto-Scan NFTs',
-              description: 'We automatically find all your music NFTs',
+              title: t('homepage.steps.discover.title'),
+              description: t('homepage.steps.discover.description'),
               icon: Download
             },
             {
               step: 3,
-              title: 'Start Listening',
-              description: 'Enjoy your collection with our built-in player',
+              title: t('homepage.steps.listen.title'),
+              description: t('homepage.steps.listen.description'),
               icon: Headphones
             }
           ].map((step, index) => {
@@ -216,11 +218,11 @@ export default function HomePage({ onSectionChange }: HomePageProps) {
           <div className="text-center space-y-6">
             <div className="flex items-center justify-center gap-2 mb-4">
               <CheckCircle className="w-6 h-6 text-green-500" />
-              <span className="text-lg font-semibold">Ready when you are</span>
+              <span className="text-lg font-semibold">{t('homepage.callToAction.ready')}</span>
             </div>
-            <h3 className="text-3xl font-bold">Transform Your Music NFT Experience</h3>
+            <h3 className="text-3xl font-bold">{t('homepage.callToAction.title')}</h3>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Join the future of music ownership. Connect your wallet and discover a new way to enjoy your Tezos music NFTs.
+              {t('homepage.callToAction.description')}
             </p>
             {wallet.state !== WalletState.CONNECTED && (
               <Button 
@@ -230,7 +232,7 @@ export default function HomePage({ onSectionChange }: HomePageProps) {
                 className="gap-2 px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
               >
                 <Wallet className="w-5 h-5" />
-                {wallet.isConnecting ? 'Connecting...' : 'Get Started Now'}
+                {wallet.isConnecting ? t('wallet.connecting') : t('homepage.callToAction.getStarted')}
                 {!wallet.isConnecting && <ArrowRight className="w-4 h-4" />}
               </Button>
             )}

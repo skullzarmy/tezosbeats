@@ -9,7 +9,9 @@
     "home": "Accueil",
     "myMusic": "Ma Musique",
     "playlists": "Playlists",
-    "search": "Rechercher"
+    "search": "Rechercher",
+    "browseYourMusic": "Parcourir Votre Musique",
+    "viewPlaylists": "Voir les Playlists"
   },
   "player": {
     "previousTrack": "Piste précédente",
@@ -27,11 +29,13 @@
   },
   "wallet": {
     "connect": "Connecter le Portefeuille",
+    "connectToStart": "Connecter le Portefeuille pour Commencer",
     "disconnect": "Déconnecter",
     "connecting": "Connexion...",
     "connected": "Connecté",
     "address": "Adresse",
-    "balance": "Solde"
+    "balance": "Solde",
+    "supports": "Compatible avec:"
   },
   "homepage": {
     "title": "Pourquoi choisir TezosBeats ?",
@@ -69,8 +73,10 @@
       }
     },
     "callToAction": {
-      "ready": "Prêt à commencer ?",
-      "description": "Connectez votre portefeuille et découvrez votre collection de NFT musicaux dès aujourd'hui !"
+      "ready": "Prêt quand vous l'êtes",
+      "title": "Transformez Votre Expérience NFT Musicale",
+      "description": "Rejoignez l'avenir de la propriété musicale. Connectez votre portefeuille et découvrez une nouvelle façon de profiter de vos NFT musicaux Tezos.",
+      "getStarted": "Commencer Maintenant"
     }
   },
   "playlists": {

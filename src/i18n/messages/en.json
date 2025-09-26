@@ -9,7 +9,9 @@
     "home": "Home",
     "myMusic": "My Music",
     "playlists": "Playlists",
-    "search": "Search"
+    "search": "Search",
+    "browseYourMusic": "Browse Your Music",
+    "viewPlaylists": "View Playlists"
   },
   "player": {
     "previousTrack": "Previous track",
@@ -27,11 +29,13 @@
   },
   "wallet": {
     "connect": "Connect Wallet",
+    "connectToStart": "Connect Wallet to Start",
     "disconnect": "Disconnect",
     "connecting": "Connecting...",
     "connected": "Connected",
     "address": "Address",
-    "balance": "Balance"
+    "balance": "Balance",
+    "supports": "Supports:"
   },
   "homepage": {
     "title": "Why Choose TezosBeats?",
@@ -69,8 +73,10 @@
       }
     },
     "callToAction": {
-      "ready": "Ready to get started?",
-      "description": "Connect your wallet and discover your music NFT collection today!"
+      "ready": "Ready when you are",
+      "title": "Transform Your Music NFT Experience",
+      "description": "Join the future of music ownership. Connect your wallet and discover a new way to enjoy your Tezos music NFTs.",
+      "getStarted": "Get Started Now"
     }
   },
   "playlists": {
